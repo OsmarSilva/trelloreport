@@ -1,0 +1,9 @@
+# Ignore pycache
+*/__pycache__
+
+# Ignore some file formats
+*.zip
+*.png
+*.doc
+*.json
+*.tex
