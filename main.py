@@ -12,6 +12,10 @@ app = FastAPI()
 async def page():
     return FileResponse(path="index.html", media_type="text/html")
 
+@app.get("/hello/{name}")
+async def say_hello(name: str):
+    return {"message": f"Hello {name}"}
+
 
 @app.get("/to_base64/{url:path}")
 async def to_base64(url: str, APIKey: str, APIToken: str):
