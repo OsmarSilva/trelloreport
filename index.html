@@ -926,7 +926,8 @@
         const p = document.createElement("p");
         p.setAttribute("align", "center");
         const img = document.createElement("img");
-        img.src = await toBase64(src);
+        /* img.src = await toBase64(src); */
+        img.src = src;
         img.style.width = "50%";
         const a = document.createElement("a");
         a.innerHTML = `<b>Figura ${index}.</b> ${
