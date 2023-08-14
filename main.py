@@ -1,6 +1,6 @@
 import base64
 
-import uvicorn
+# import uvicorn
 import requests
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
@@ -26,5 +26,5 @@ async def to_base64(url: str, APIKey: str, APIToken: str):
     return encoded.decode("utf-8")
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=5000, log_level="info")
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", host="0.0.0.0", port=5000, log_level="info")
