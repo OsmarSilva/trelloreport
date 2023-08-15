@@ -12,6 +12,8 @@ origins = [
     "https://47gpr6xocjycphgdj2rzo6gcoy0etxgg.lambda-url.us-east-1.on.aws/",
     "http://localhost",
     "http://localhost:8080",
+    "http://0.0.0.0:5000",
+    "*",
 ]
 
 app.add_middleware(
