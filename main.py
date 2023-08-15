@@ -4,9 +4,23 @@ import base64
 import requests
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-app.use(cors())
+
+origins = [
+    "https://47gpr6xocjycphgdj2rzo6gcoy0etxgg.lambda-url.us-east-1.on.aws/",
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
