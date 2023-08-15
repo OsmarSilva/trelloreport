@@ -926,8 +926,8 @@
         const p = document.createElement("p");
         p.setAttribute("align", "center");
         const img = document.createElement("img");
-        /* img.src = await toBase64(src); */
-        img.src = src;
+        img.src = await toBase64(src);
+        //img.src = src;
         img.style.width = "50%";
         const a = document.createElement("a");
         a.innerHTML = `<b>Figura ${index}.</b> ${
@@ -1108,7 +1108,8 @@
       async function toBase64(src) {
         return await (
           await fetch(
-            `https://trelloreport.vercel.app/to_base64/${src}?APIKey=${Credentials.APIKey.value}&APIToken=${Credentials.APIToken.value}`
+            `https://47gpr6xocjycphgdj2rzo6gcoy0etxgg.lambda-url.us-east-1.on.aws/?APIToken=${Credentials.APIToken.value}&APIKey=${Credentials.APIKey.value}&url=${src}`
+            //`https://trelloreport.vercel.app/to_base64/${src}?APIKey=${Credentials.APIKey.value}&APIToken=${Credentials.APIToken.value}`
           )
         ).json();
       }
