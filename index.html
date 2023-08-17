@@ -1105,11 +1105,20 @@
         }
       }
 
-      async function toBase64(src) {
+      /*async function toBase64(src) {
         return await (
           await fetch(
             //`https://47gpr6xocjycphgdj2rzo6gcoy0etxgg.lambda-url.us-east-1.on.aws/?APIToken=${Credentials.APIToken.value}&APIKey=${Credentials.APIKey.value}&url=${src}`
             `http://localhost:8082/to_base64/${src}?APIKey=${Credentials.APIKey.value}&APIToken=${Credentials.APIToken.value}`
+          )
+        ).json();
+      }*/
+
+      async function toBase64(src) {
+        return await (
+          await fetch(
+            `https://47gpr6xocjycphgdj2rzo6gcoy0etxgg.lambda-url.us-east-1.on.aws/?APIToken=${Credentials.APIToken.value}&APIKey=${Credentials.APIKey.value}&url=${src}`
+            //`http://localhost:8082/to_base64/${src}?APIKey=${Credentials.APIKey.value}&APIToken=${Credentials.APIToken.value}`
           )
         ).text();
       }
